@@ -1,0 +1,22 @@
+#ifdef __GNUC__
+const     BMPMAP Cursor =
+#else
+const     BMPMAP Cursor[] =
+#endif
+{
+  0x02,0x00, // Graphics Format
+  0x00,0x08, // Graphics DataSize
+  0x00,      // Graphics Start X
+  0x00,      // Graphics Start Y
+  0x07,      // Graphics Width
+  0x08,      // Graphics Height
+BEGIN_DATA
+  0x21,0x31,0x39,0x3D,0x39,0x31,0x21
+END_DATA
+};
+
+#ifdef __GNUC__
+#define Cursor_BMPMAP_PTR (&Cursor)
+#else
+#define Cursor_BMPMAP_PTR Cursor
+#endif
